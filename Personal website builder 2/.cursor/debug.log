@@ -1,0 +1,4 @@
+{"location":"Navbar.tsx:go:before","message":"go() BEFORE scroll","data":{"href":"#skills","mobileOpen":true,"scrollBefore":0,"elFound":true,"elTop":6675.5625,"elId":"skills"},"timestamp":1771733982076,"hypothesisId":"H5,H6,H7"}
+{"location":"Navbar.tsx:go:after","message":"go() 500ms AFTER scroll","data":{"href":"#skills","scrollAfter":0,"scrollBefore":0,"didScroll":false,"mobileOpenNow":false},"timestamp":1771733982577,"hypothesisId":"H5,H6"}
+{"location":"Navbar.tsx:go:before","message":"go() BEFORE scroll","data":{"href":"#education","mobileOpen":true,"scrollBefore":0,"elFound":true,"elTop":7519.5625,"elId":"education"},"timestamp":1771733983996,"hypothesisId":"H5,H6,H7"}
+{"location":"Navbar.tsx:go:after","message":"go() 500ms AFTER scroll","data":{"href":"#education","scrollAfter":0,"scrollBefore":0,"didScroll":false,"mobileOpenNow":false},"timestamp":1771733984497,"hypothesisId":"H5,H6"}
