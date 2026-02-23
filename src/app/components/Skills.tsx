@@ -637,27 +637,26 @@ export function Skills() {
       // Sort by z for depth ordering
       const sorted = nodes.slice().sort((a, b) => a.z - b.z);
 
-      // Draw constellation lines (skip on mobile)
-      if (!isMobile) {
-        for (let i = 0; i < sorted.length; i++) {
-          for (let j = i + 1; j < sorted.length; j++) {
-            const a = sorted[i], b = sorted[j];
-            const dx = a.sx - b.sx, dy = a.sy - b.sy;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 320) {
-              const lineStrength = 0.78;
-              const lineAlpha = Math.max(0, 1 - dist / 320) * lineStrength * Math.min(a.alpha, b.alpha);
-              ctx!.beginPath();
-              ctx!.moveTo(a.sx, a.sy);
-              ctx!.lineTo(b.sx, b.sy);
-              ctx!.strokeStyle = `rgba(${accent},${lineAlpha})`;
-              ctx!.lineWidth = 2.2;
-              ctx!.stroke();
-            }
+      // Draw constellation lines on all devices; mobile gets stronger lines for visibility.
+      const linkDistance = isMobile ? 360 : 320;
+      const lineStrength = isMobile ? 1.35 : 0.78;
+      const lineWidth = isMobile ? 2.6 : 2.2;
+      for (let i = 0; i < sorted.length; i++) {
+        for (let j = i + 1; j < sorted.length; j++) {
+          const a = sorted[i], b = sorted[j];
+          const dx = a.sx - b.sx, dy = a.sy - b.sy;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < linkDistance) {
+            const lineAlpha = Math.max(0, 1 - dist / linkDistance) * lineStrength * Math.min(a.alpha, b.alpha);
+            ctx!.beginPath();
+            ctx!.moveTo(a.sx, a.sy);
+            ctx!.lineTo(b.sx, b.sy);
+            ctx!.strokeStyle = `rgba(${accent},${lineAlpha})`;
+            ctx!.lineWidth = lineWidth;
+            ctx!.stroke();
           }
         }
       }
-
       // Draw nodes back-to-front
       for (const n of sorted) {
         const s = n.scale + n.hoverT * 0.3;
