@@ -9,7 +9,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p style={{ fontSize: "0.8rem", color: "var(--t-text-muted)" }}>
-            &copy; {new Date().getFullYear()} Nikolai Grigorev. Built with React & Tailwind CSS.
+            &copy; {new Date().getFullYear()} Nikolai Grigorev. Built with love and creativity.
           </p>
 
           <div className="flex items-center gap-4">
