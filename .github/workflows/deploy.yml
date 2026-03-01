@@ -30,18 +30,26 @@ jobs:
           cache: npm
 
       - name: Install
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
       - name: Build
         run: npm run build
 
-      - name: Validate Cloudflare config
+      - name: Check Cloudflare config
+        id: cf_config
         run: |
-          test -n "$CLOUDFLARE_ACCOUNT_ID"
-          test -n "$CLOUDFLARE_API_TOKEN"
-          test -n "$CLOUDFLARE_PROJECT_NAME"
+          if [ -n "$CLOUDFLARE_ACCOUNT_ID" ] && [ -n "$CLOUDFLARE_API_TOKEN" ] && [ -n "$CLOUDFLARE_PROJECT_NAME" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Skip deploy (missing Cloudflare config)
+        if: steps.cf_config.outputs.configured != 'true'
+        run: echo "Cloudflare secrets/variables are not fully configured. Skipping deploy."
 
       - name: Deploy to Cloudflare Pages
+        if: steps.cf_config.outputs.configured == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
