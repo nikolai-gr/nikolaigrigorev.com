@@ -10,20 +10,13 @@ export function Hero() {
     >
       {/* Background gradient */}
       <div
-        className="absolute inset-0"
-        style={{
-          background: "radial-gradient(ellipse at top, var(--t-hero-1) 0%, var(--t-hero-2) 60%)",
-        }}
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--t-hero-1)_0%,_var(--t-hero-2)_60%)]"
       />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_rgba(99,102,241,0.08)_0%,_transparent_50%)]" />
 
       {/* Grid pattern overlay */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(var(--t-grid) 1px, transparent 1px), linear-gradient(90deg, var(--t-grid) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
+        className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(var(--t-grid)_1px,_transparent_1px),linear-gradient(90deg,_var(--t-grid)_1px,_transparent_1px)] bg-[length:60px_60px]"
       />
 
       {/* Noodle man background animation */}
@@ -39,7 +32,7 @@ export function Hero() {
           >
             <div className="flex items-center justify-center gap-2 mb-6">
               <MapPin size={14} className="text-[#6366f1]" />
-              <span style={{ fontSize: "0.875rem", color: "var(--t-text-body)" }}>
+              <span className="text-[0.875rem] text-[var(--t-text-body)]">
                 New York City, NY
               </span>
             </div>
@@ -49,15 +42,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mb-4"
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-              fontWeight: 700,
-              lineHeight: 1.1,
-              letterSpacing: "-0.03em",
-              color: "var(--t-text)",
-            }}
+            className="mb-4 [font-family:Inter,sans-serif] text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.1] tracking-[-0.03em] text-[var(--t-text)]"
           >
             Nikolai Grigorev
           </motion.h1>
@@ -66,12 +51,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-[#6366f1] mb-6"
-            style={{
-              fontFamily: "JetBrains Mono, monospace",
-              fontSize: "clamp(0.875rem, 2vw, 1.125rem)",
-              fontWeight: 400,
-            }}
+            className="text-[#6366f1] mb-6 [font-family:JetBrains_Mono,monospace] text-[clamp(0.875rem,2vw,1.125rem)] font-normal"
           >
             iOS Developer · AI Enthusiast · CS Student
           </motion.p>
@@ -80,8 +60,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="max-w-2xl mx-auto mb-10 text-center"
-            style={{ fontSize: "1.05rem", lineHeight: 1.7, color: "var(--t-text-body)" }}
+            className="max-w-2xl mx-auto mb-10 text-center text-[1.05rem] leading-[1.7] text-[var(--t-text-body)]"
           >
             Building elegant, user-centric mobile experiences with Swift & SwiftUI.{" "}
             <br className="hidden sm:block" />
@@ -106,8 +85,7 @@ export function Hero() {
                 href={item.href}
                 target={item.noTarget ? undefined : "_blank"}
                 rel={item.noTarget ? undefined : "noopener noreferrer"}
-                className="liquid-glass p-3.5 rounded-full"
-                style={{ color: "var(--t-text-body)" }}
+                className="liquid-glass p-3.5 rounded-full text-[var(--t-text-body)]"
               >
                 {item.icon}
               </a>
@@ -126,8 +104,7 @@ export function Hero() {
                 e.preventDefault();
                 document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="liquid-glass-primary px-7 py-3 text-white rounded-full"
-              style={{ fontSize: "0.9rem", fontWeight: 500 }}
+              className="liquid-glass-primary px-7 py-3 text-white rounded-full text-[0.9rem] font-medium"
             >
               Learn More
             </a>
@@ -137,12 +114,7 @@ export function Hero() {
                 e.preventDefault();
                 document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="liquid-glass px-7 py-3 rounded-full"
-              style={{
-                fontSize: "0.9rem",
-                fontWeight: 500,
-                color: "var(--t-text)",
-              }}
+              className="liquid-glass px-7 py-3 rounded-full text-[0.9rem] font-medium text-[var(--t-text)]"
             >
               Get in Touch
             </a>
@@ -161,7 +133,7 @@ export function Hero() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown size={20} style={{ color: "var(--t-text-dim)" }} />
+          <ChevronDown size={20} className="text-[var(--t-text-dim)]" />
         </motion.div>
       </motion.div>
     </section>

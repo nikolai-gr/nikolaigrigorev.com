@@ -43,20 +43,11 @@ export function Projects() {
           transition={{ duration: 0.7 }}
         >
           <p
-            className="text-[#6366f1] mb-2"
-            style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "0.875rem" }}
+            className="text-[#6366f1] mb-2 [font-family:JetBrains_Mono,monospace] text-[0.875rem]"
           >
             03. Projects
           </p>
-          <h2
-            className="mb-16"
-            style={{
-              fontSize: "2rem",
-              fontWeight: 600,
-              letterSpacing: "-0.02em",
-              color: "var(--t-text)",
-            }}
-          >
+          <h2 className="mb-16 text-[2rem] font-semibold tracking-[-0.02em] text-[var(--t-text)]">
             What I've Built
           </h2>
         </motion.div>
@@ -68,12 +59,7 @@ export function Projects() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="group relative p-6 md:p-8 rounded-2xl hover:border-[#6366f1]/30 transition-all"
-              style={{
-                backgroundColor: "var(--t-bg-card)",
-                border: "1px solid var(--t-border)",
-                boxShadow: "var(--t-shadow)",
-              }}
+              className="group relative p-6 md:p-8 rounded-2xl hover:border-[#6366f1]/30 transition-all bg-[var(--t-bg-card)] border border-[var(--t-border)] [box-shadow:var(--t-shadow)]"
             >
               {/* Hover glow */}
               <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_50%_0%,_rgba(99,102,241,0.06)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -87,24 +73,17 @@ export function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#6366f1] transition-colors"
-                    style={{ color: "var(--t-text-muted)" }}
+                    className="hover:text-[#6366f1] transition-colors text-[var(--t-text-muted)]"
                   >
                     <Github size={20} />
                   </a>
                 </div>
 
-                <h3
-                  className="mb-3"
-                  style={{ fontSize: "1.25rem", fontWeight: 600, color: "var(--t-text)" }}
-                >
+                <h3 className="mb-3 text-[1.25rem] font-semibold text-[var(--t-text)]">
                   {project.title}
                 </h3>
 
-                <p
-                  className="mb-5"
-                  style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "var(--t-text-body)" }}
-                >
+                <p className="mb-5 text-[0.9rem] leading-[1.7] text-[var(--t-text-body)]">
                   {project.description}
                 </p>
 
@@ -112,8 +91,7 @@ export function Projects() {
                   {project.highlights.map((h, j) => (
                     <li
                       key={j}
-                      className="flex gap-2"
-                      style={{ fontSize: "0.8rem", lineHeight: 1.6, color: "var(--t-text-muted)" }}
+                      className="flex gap-2 text-[0.8rem] leading-[1.6] text-[var(--t-text-muted)]"
                     >
                       <span className="text-[#6366f1] mt-0.5 shrink-0">▹</span>
                       <span>{h}</span>
@@ -125,11 +103,7 @@ export function Projects() {
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="px-3 py-1 rounded-full bg-[#6366f1]/10 text-[#6366f1]"
-                      style={{
-                        fontFamily: "JetBrains Mono, monospace",
-                        fontSize: "0.7rem",
-                      }}
+                      className="px-3 py-1 rounded-full bg-[#6366f1]/10 text-[#6366f1] [font-family:JetBrains_Mono,monospace] text-[0.7rem]"
                     >
                       {t}
                     </span>
@@ -150,12 +124,7 @@ export function Projects() {
             href="https://github.com/nikolai-gr"
             target="_blank"
             rel="noopener noreferrer"
-            className="liquid-glass inline-flex items-center gap-2 px-6 py-3 rounded-full"
-            style={{
-              fontSize: "0.9rem",
-              fontWeight: 500,
-              color: "var(--t-text-body)",
-            }}
+            className="liquid-glass inline-flex items-center gap-2 px-6 py-3 rounded-full text-[0.9rem] font-medium text-[var(--t-text-body)]"
           >
             <Github size={16} />
             See more on GitHub

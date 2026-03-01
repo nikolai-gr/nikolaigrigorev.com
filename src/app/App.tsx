@@ -13,27 +13,15 @@ import skillsBg from "@/assets/skills-bg.jpg";
 export default function App() {
   return (
     <ThemeProvider>
-      <div
-        className="min-h-screen transition-colors duration-500"
-        style={{
-          backgroundColor: "var(--t-bg)",
-          color: "var(--t-text-default)",
-          fontFamily: "Inter, sans-serif",
-        }}
-      >
+      <div className="min-h-screen transition-colors duration-500 bg-[var(--t-bg)] text-[var(--t-text-default)] [font-family:Inter,sans-serif]">
         <Navbar />
         <Hero />
         <About />
         <Experience />
         <Projects />
         <div
-          className="relative"
-          style={{
-            backgroundImage: `url(${skillsBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center top",
-            backgroundRepeat: "no-repeat",
-          }}
+          className="relative bg-cover bg-top bg-no-repeat"
+          style={{ backgroundImage: `url(${skillsBg})` }}
         >
           <Skills />
           <Education />

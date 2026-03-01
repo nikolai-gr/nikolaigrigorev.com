@@ -85,20 +85,11 @@ export function Experience() {
           transition={{ duration: 0.7 }}
         >
           <p
-            className="text-[#6366f1] mb-2"
-            style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "0.875rem" }}
+            className="text-[#6366f1] mb-2 [font-family:JetBrains_Mono,monospace] text-[0.875rem]"
           >
             02. Experience
           </p>
-          <h2
-            className="mb-16"
-            style={{
-              fontSize: "2rem",
-              fontWeight: 600,
-              letterSpacing: "-0.02em",
-              color: "var(--t-text)",
-            }}
-          >
+          <h2 className="mb-16 text-[2rem] font-semibold tracking-[-0.02em] text-[var(--t-text)]">
             Where I've Worked
           </h2>
         </motion.div>
@@ -118,17 +109,11 @@ export function Experience() {
               >
                 {/* Timeline dot */}
                 <div
-                  className="absolute left-0 md:left-6 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-[#6366f1] shadow-[0_0_10px_rgba(99,102,241,0.4)]"
-                  style={{ border: "2px solid var(--t-timeline-dot-border)" }}
+                  className="absolute left-0 md:left-6 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-[#6366f1] shadow-[0_0_10px_rgba(99,102,241,0.4)] border-2 border-[var(--t-timeline-dot-border)]"
                 />
 
                 <div
-                  className="p-6 rounded-xl transition-all"
-                  style={{
-                    backgroundColor: "var(--t-bg-card)",
-                    border: "1px solid var(--t-border)",
-                    boxShadow: "var(--t-shadow)",
-                  }}
+                  className="p-6 rounded-xl transition-all bg-[var(--t-bg-card)] border border-[var(--t-border)] [box-shadow:var(--t-shadow)]"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div className="flex items-start gap-3">
@@ -138,28 +123,20 @@ export function Experience() {
                         </div>
                       )}
                       <div>
-                        <h3
-                          style={{ fontSize: "1.1rem", fontWeight: 600, color: "var(--t-text)" }}
-                        >
+                        <h3 className="text-[1.1rem] font-semibold text-[var(--t-text)]">
                           {exp.title}
                         </h3>
-                        <p className="text-[#6366f1]" style={{ fontSize: "0.9rem" }}>
+                        <p className="text-[#6366f1] text-[0.9rem]">
                           {exp.company}
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-col items-start sm:items-end gap-1 shrink-0">
-                      <span
-                        className="flex items-center gap-1.5"
-                        style={{ fontSize: "0.8rem", color: "var(--t-text-muted)" }}
-                      >
+                      <span className="flex items-center gap-1.5 text-[0.8rem] text-[var(--t-text-muted)]">
                         <Calendar size={12} />
                         {exp.period}
                       </span>
-                      <span
-                        className="flex items-center gap-1.5"
-                        style={{ fontSize: "0.8rem", color: "var(--t-text-muted)" }}
-                      >
+                      <span className="flex items-center gap-1.5 text-[0.8rem] text-[var(--t-text-muted)]">
                         <MapPin size={12} />
                         {exp.location}
                       </span>
@@ -170,12 +147,7 @@ export function Experience() {
                     {exp.bullets.map((bullet, j) => (
                       <li
                         key={j}
-                        className="flex gap-3"
-                        style={{
-                          fontSize: "0.875rem",
-                          lineHeight: 1.7,
-                          color: "var(--t-text-body)",
-                        }}
+                        className="flex gap-3 text-[0.875rem] leading-[1.7] text-[var(--t-text-body)]"
                       >
                         <span className="text-[#6366f1] mt-2 shrink-0">▹</span>
                         <span>{bullet}</span>

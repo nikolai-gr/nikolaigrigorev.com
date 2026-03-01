@@ -40,26 +40,14 @@ export function Contact() {
           className="text-center mb-16"
         >
           <p
-            className="text-[#6366f1] mb-2"
-            style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "0.875rem" }}
+            className="text-[#6366f1] mb-2 [font-family:JetBrains_Mono,monospace] text-[0.875rem]"
           >
             06. Contact
           </p>
-          <h2
-            className="mb-4"
-            style={{
-              fontSize: "2rem",
-              fontWeight: 600,
-              letterSpacing: "-0.02em",
-              color: "var(--t-text)",
-            }}
-          >
+          <h2 className="mb-4 text-[2rem] font-semibold tracking-[-0.02em] text-[var(--t-text)]">
             Get In Touch
           </h2>
-          <p
-            className="max-w-lg mx-auto"
-            style={{ fontSize: "1rem", lineHeight: 1.7, color: "var(--t-text-body)" }}
-          >
+          <p className="max-w-lg mx-auto text-[1rem] leading-[1.7] text-[var(--t-text-body)]">
             I'm currently open to iOS development opportunities and collaborations.
             Whether you have a question or just want to say hello, feel free to reach out!
           </p>
@@ -82,20 +70,12 @@ export function Contact() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                className="flex items-center gap-4 p-4 rounded-xl hover:border-[#6366f1]/30 hover:bg-[#6366f1]/5 transition-all group"
-                style={{
-                  backgroundColor: "var(--t-bg-card)",
-                  border: "1px solid var(--t-border)",
-                  boxShadow: "var(--t-shadow)",
-                }}
+                className="flex items-center gap-4 p-4 rounded-xl hover:border-[#6366f1]/30 hover:bg-[#6366f1]/5 transition-all group bg-[var(--t-bg-card)] border border-[var(--t-border)] [box-shadow:var(--t-shadow)]"
               >
                 <div className="text-[#6366f1] group-hover:scale-110 transition-transform">
                   {link.icon}
                 </div>
-                <span
-                  className="gradient-underline-text group-hover:opacity-100 transition-colors"
-                  style={{ fontSize: "0.9rem", color: "var(--t-text-body)" }}
-                >
+                <span className="gradient-underline-text group-hover:opacity-100 transition-colors text-[0.9rem] text-[var(--t-text-body)]">
                   {link.label}
                 </span>
               </motion.a>
@@ -107,17 +87,9 @@ export function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="p-6 rounded-xl"
-            style={{
-              backgroundColor: "var(--t-bg-card)",
-              border: "1px solid var(--t-border)",
-              boxShadow: "var(--t-shadow)",
-            }}
+            className="p-6 rounded-xl bg-[var(--t-bg-card)] border border-[var(--t-border)] [box-shadow:var(--t-shadow)]"
           >
-            <h3
-              className="mb-5"
-              style={{ fontSize: "1.1rem", fontWeight: 600, color: "var(--t-text)" }}
-            >
+            <h3 className="mb-5 text-[1.1rem] font-semibold text-[var(--t-text)]">
               Send a Message
             </h3>
             <form
@@ -131,69 +103,41 @@ export function Contact() {
               className="space-y-4"
             >
               <div>
-                <label
-                  className="block mb-1.5"
-                  style={{ fontSize: "0.8rem", fontWeight: 500, color: "var(--t-text-muted)" }}
-                >
+                <label className="block mb-1.5 text-[0.8rem] font-medium text-[var(--t-text-muted)]">
                   Your Name
                 </label>
                 <input
                   name="name"
                   type="text"
                   placeholder="John Doe"
-                  className="contact-input w-full px-4 py-3 rounded-lg focus:border-[#6366f1]/50 focus:outline-none transition-colors"
-                  style={{
-                    fontSize: "0.9rem",
-                    backgroundColor: "var(--t-bg-input)",
-                    border: "1px solid var(--t-border-input)",
-                    color: "var(--t-text)",
-                  }}
+                  className="contact-input w-full px-4 py-3 rounded-lg focus:border-[#6366f1]/50 focus:outline-none transition-colors text-[0.9rem] bg-[var(--t-bg-input)] border border-[var(--t-border-input)] text-[var(--t-text)]"
                 />
               </div>
               <div>
-                <label
-                  className="block mb-1.5"
-                  style={{ fontSize: "0.8rem", fontWeight: 500, color: "var(--t-text-muted)" }}
-                >
+                <label className="block mb-1.5 text-[0.8rem] font-medium text-[var(--t-text-muted)]">
                   Your Email
                 </label>
                 <input
                   name="email"
                   type="email"
                   placeholder="john@example.com"
-                  className="contact-input w-full px-4 py-3 rounded-lg focus:border-[#6366f1]/50 focus:outline-none transition-colors"
-                  style={{
-                    fontSize: "0.9rem",
-                    backgroundColor: "var(--t-bg-input)",
-                    border: "1px solid var(--t-border-input)",
-                    color: "var(--t-text)",
-                  }}
+                  className="contact-input w-full px-4 py-3 rounded-lg focus:border-[#6366f1]/50 focus:outline-none transition-colors text-[0.9rem] bg-[var(--t-bg-input)] border border-[var(--t-border-input)] text-[var(--t-text)]"
                 />
               </div>
               <div>
-                <label
-                  className="block mb-1.5"
-                  style={{ fontSize: "0.8rem", fontWeight: 500, color: "var(--t-text-muted)" }}
-                >
+                <label className="block mb-1.5 text-[0.8rem] font-medium text-[var(--t-text-muted)]">
                   Message
                 </label>
                 <textarea
                   name="message"
                   rows={4}
                   placeholder="Hi Nikolai, I'd love to chat about..."
-                  className="contact-input w-full px-4 py-3 rounded-lg focus:border-[#6366f1]/50 focus:outline-none transition-colors resize-none"
-                  style={{
-                    fontSize: "0.9rem",
-                    backgroundColor: "var(--t-bg-input)",
-                    border: "1px solid var(--t-border-input)",
-                    color: "var(--t-text)",
-                  }}
+                  className="contact-input w-full px-4 py-3 rounded-lg focus:border-[#6366f1]/50 focus:outline-none transition-colors resize-none text-[0.9rem] bg-[var(--t-bg-input)] border border-[var(--t-border-input)] text-[var(--t-text)]"
                 />
               </div>
               <button
                 type="submit"
-                className="liquid-glass-primary w-full flex items-center justify-center gap-2 px-6 py-3 text-white rounded-full cursor-pointer"
-                style={{ fontSize: "0.9rem", fontWeight: 500 }}
+                className="liquid-glass-primary w-full flex items-center justify-center gap-2 px-6 py-3 text-white rounded-full cursor-pointer text-[0.9rem] font-medium"
               >
                 <Send size={16} />
                 Send Message
