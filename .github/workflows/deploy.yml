@@ -21,7 +21,7 @@ jobs:
       CLOUDFLARE_PROJECT_NAME: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Check Cloudflare config
         id: cf_config
