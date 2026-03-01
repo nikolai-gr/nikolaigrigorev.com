@@ -13,7 +13,14 @@
 
   ## Security
 
-  - GitHub Pages is the active deployment target (`.github/workflows/deploy.yml`), so browser policies and CI scans are the primary protections there.
+  - Cloudflare Pages is the deployment target (`.github/workflows/deploy.yml`) with edge security headers via `public/_headers`.
   - Automated security workflows are configured for dependency audit and CodeQL analysis.
   - Dependabot is enabled for npm and GitHub Actions updates.
+
+  ## Cloudflare Setup
+
+  Configure these GitHub repository settings before running the deploy workflow:
+  - Secret: `CLOUDFLARE_API_TOKEN` (token with Cloudflare Pages deploy permissions)
+  - Secret: `CLOUDFLARE_ACCOUNT_ID`
+  - Variable: `CLOUDFLARE_PROJECT_NAME` (your Cloudflare Pages project name)
   
