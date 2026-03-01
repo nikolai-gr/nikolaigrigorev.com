@@ -47,6 +47,10 @@ jobs:
         if: steps.cf_config.outputs.configured == 'true'
         run: npm install --no-audit --no-fund
 
+      - name: Security baseline
+        if: steps.cf_config.outputs.configured == 'true'
+        run: npm run security:baseline
+
       - name: Build
         if: steps.cf_config.outputs.configured == 'true'
         run: npm run build

@@ -16,6 +16,7 @@
   - Cloudflare Pages is the deployment target (`.github/workflows/deploy.yml`) with edge security headers via `public/_headers`.
   - Automated security workflows are configured for dependency audit and CodeQL analysis.
   - Dependabot is enabled for npm and GitHub Actions updates.
+  - Run `npm run security:baseline` to enforce CSP/header and frontend security guardrails locally.
 
   ## Cloudflare Setup
 
