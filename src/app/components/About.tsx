@@ -91,20 +91,11 @@ export function About() {
           transition={{ duration: 0.7 }}
         >
           <p
-            className="text-[#6366f1] mb-2"
-            style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "0.875rem" }}
+            className="text-[#6366f1] mb-2 [font-family:JetBrains_Mono,monospace] text-[0.875rem]"
           >
             01. About Me
           </p>
-          <h2
-            className="mb-12"
-            style={{
-              fontSize: "2rem",
-              fontWeight: 600,
-              letterSpacing: "-0.02em",
-              color: "var(--t-text)",
-            }}
-          >
+          <h2 className="mb-12 text-[2rem] font-semibold tracking-[-0.02em] text-[var(--t-text)]">
             Who I Am
           </h2>
         </motion.div>
@@ -119,8 +110,7 @@ export function About() {
           >
             <div
               ref={photoContainerRef}
-              className="relative"
-              style={{ perspective: "1200px" }}
+              className="relative [perspective:1200px]"
               onMouseMove={handleMouseMove}
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => {
@@ -140,8 +130,8 @@ export function About() {
 
               {/* Main wide photo */}
               <motion.div
-                className="relative z-10 rounded-2xl overflow-hidden"
-                style={{ y: parallaxY, transformStyle: "preserve-3d" }}
+                className="relative z-10 rounded-2xl overflow-hidden [transform-style:preserve-3d]"
+                style={{ y: parallaxY }}
                 animate={{
                   rotateX: isHovering ? tiltX : 0,
                   rotateY: isHovering ? tiltY : 0,
@@ -159,42 +149,28 @@ export function About() {
                   <img
                     src={photoWide}
                     alt="Nikolai Grigorev"
-                    className="w-full rounded-2xl"
-                    style={{
-                      aspectRatio: "4/3",
-                      objectFit: "cover",
-                      objectPosition: "center 30%",
-                    }}
+                    className="w-full rounded-2xl aspect-[4/3] object-cover object-[center_30%]"
                   />
                   {/* Glass overlay on bottom */}
                   <div
-                    className="absolute bottom-0 left-0 right-0 h-1/3"
-                    style={{
-                      background: "linear-gradient(to top, rgba(0,0,0,0.5), transparent)",
-                    }}
+                    className="absolute bottom-0 left-0 right-0 h-1/3 bg-[linear-gradient(to_top,rgba(0,0,0,0.5),transparent)]"
                   />
                 </motion.div>
 
                 {/* Liquid glass border frame */}
                 <div
-                  className="absolute inset-0 rounded-2xl pointer-events-none z-20"
-                  style={{
-                    border: "1px solid rgba(255,255,255,0.12)",
-                    boxShadow:
-                      "inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.2), 0 8px 32px rgba(0,0,0,0.3)",
-                  }}
+                  className="absolute inset-0 rounded-2xl pointer-events-none z-20 border border-[rgba(255,255,255,0.12)] [box-shadow:inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-1px_0_rgba(0,0,0,0.2),0_8px_32px_rgba(0,0,0,0.3)]"
                 />
               </motion.div>
 
               {/* Portrait overlay card */}
               <motion.div
-                className="absolute z-30 rounded-xl"
+                className="absolute z-30 rounded-xl [transform-style:preserve-3d]"
                 style={{
                   bottom: "-24px",
                   right: "-16px",
                   width: "45%",
                   y: parallaxY2,
-                  transformStyle: "preserve-3d",
                 }}
                 initial={{ opacity: 0, scale: 0.8, y: 40 }}
                 animate={
@@ -223,56 +199,25 @@ export function About() {
                   <img
                     src={photoPortrait}
                     alt="Nikolai Grigorev portrait"
-                    className="w-full rounded-xl"
-                    style={{
-                      aspectRatio: "3/4",
-                      objectFit: "cover",
-                    }}
+                    className="w-full rounded-xl aspect-[3/4] object-cover"
                   />
                 </motion.div>
 
                 {/* Glass border */}
                 <div
-                  className="absolute inset-0 rounded-xl pointer-events-none"
-                  style={{
-                    border: "1px solid rgba(255,255,255,0.18)",
-                    boxShadow:
-                      "inset 0 1px 0 rgba(255,255,255,0.2), 0 12px 40px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.2)",
-                  }}
+                  className="absolute inset-0 rounded-xl pointer-events-none border border-[rgba(255,255,255,0.18)] [box-shadow:inset_0_1px_0_rgba(255,255,255,0.2),0_12px_40px_rgba(0,0,0,0.35),0_4px_12px_rgba(0,0,0,0.2)]"
                 />
 
               </motion.div>
 
               {/* Corner accent - top left (static, behind photos) */}
               <div
-                className="absolute pointer-events-none"
-                style={{
-                  top: "-4px",
-                  left: "-4px",
-                  width: 24,
-                  height: 24,
-                  borderTop: "2px solid #6366f1",
-                  borderLeft: "2px solid #6366f1",
-                  borderTopLeftRadius: 8,
-                  opacity: 0.6,
-                  zIndex: 5,
-                }}
+                className="absolute pointer-events-none top-[-4px] left-[-4px] w-6 h-6 border-t-2 border-l-2 border-[#6366f1] rounded-tl-[8px] opacity-60 z-[5]"
               />
 
               {/* Corner accent - bottom right (static, behind photos) */}
               <div
-                className="absolute pointer-events-none"
-                style={{
-                  bottom: "-30px",
-                  right: "-22px",
-                  width: 24,
-                  height: 24,
-                  borderBottom: "2px solid #6366f1",
-                  borderRight: "2px solid #6366f1",
-                  borderBottomRightRadius: 8,
-                  opacity: 0.6,
-                  zIndex: 5,
-                }}
+                className="absolute pointer-events-none bottom-[-30px] right-[-22px] w-6 h-6 border-b-2 border-r-2 border-[#6366f1] rounded-br-[8px] opacity-60 z-[5]"
               />
 
               {/* Floating decorative elements */}
@@ -367,8 +312,8 @@ export function About() {
                       />
                     ))}
                   </div>
-                  <div
-                    className="absolute inset-0 pointer-events-none"
+                <div
+                  className="absolute inset-0 pointer-events-none"
                     style={{
                       background:
                         "linear-gradient(145deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 38%, rgba(0,0,0,0.18) 100%)",
@@ -427,8 +372,7 @@ export function About() {
               transition={{ duration: 0.7, delay: 0.2 }}
             >
               <p
-                className="mb-6"
-                style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--t-text-body)" }}
+                className="mb-6 text-[1rem] leading-[1.8] text-[var(--t-text-body)]"
               >
                 I am an iOS Developer and CIS student at City Tech (CUNY) driven by a "lifting
                 while climbing" philosophy. My focus is on bridging the gap between robust backend
@@ -437,8 +381,7 @@ export function About() {
                 Boulder, I am dedicated to becoming an AI-Enhanced iOS Developer.
               </p>
               <p
-                className="mb-6"
-                style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--t-text-body)" }}
+                className="mb-6 text-[1rem] leading-[1.8] text-[var(--t-text-body)]"
               >
                 Currently, I am deep-diving into the iOS ecosystem, specifically modern mobile
                 architecture and the integration of Large Language Models (LLMs) into native
@@ -446,8 +389,7 @@ export function About() {
                 AI, I aim to create seamless digital experiences.
               </p>
               <p
-                className="mb-8"
-                style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--t-text-body)" }}
+                className="mb-8 text-[1rem] leading-[1.8] text-[var(--t-text-body)]"
               >
                 Based in New York City, I'm always excited to connect with fellow developers,
                 engineers, and tech enthusiasts who are passionate about the future of iOS and AI
@@ -468,23 +410,17 @@ export function About() {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
                   whileHover={{ y: -4, transition: { duration: 0.25 } }}
-                  className="p-5 rounded-xl hover:border-[#6366f1]/30 hover:bg-[#6366f1]/5 transition-all group cursor-default"
-                  style={{
-                    backgroundColor: "var(--t-bg-card-alt)",
-                    border: "1px solid var(--t-border)",
-                    boxShadow: "var(--t-shadow)",
-                  }}
+                  className="p-5 rounded-xl hover:border-[#6366f1]/30 hover:bg-[#6366f1]/5 transition-all group cursor-default bg-[var(--t-bg-card-alt)] border border-[var(--t-border)] [box-shadow:var(--t-shadow)]"
                 >
                   <div className="text-[#6366f1] mb-3 group-hover:scale-110 transition-transform">
                     {item.icon}
                   </div>
                   <h4
-                    className="mb-1"
-                    style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--t-text)" }}
+                    className="mb-1 text-[0.9rem] font-semibold text-[var(--t-text)]"
                   >
                     {item.label}
                   </h4>
-                  <p style={{ fontSize: "0.8rem", lineHeight: 1.5, color: "var(--t-text-muted)" }}>
+                  <p className="text-[0.8rem] leading-[1.5] text-[var(--t-text-muted)]">
                     {item.description}
                   </p>
                 </motion.div>

@@ -17,8 +17,8 @@ const evalLikeCount = scan(/\beval\s*\(|\bnew Function\s*\(|document\.write\s*\(
 
 const failures = [];
 
-if (styleInlineCount > 124) {
-  failures.push(`Inline style usage increased: ${styleInlineCount} > 124`);
+if (styleInlineCount > 26) {
+  failures.push(`Inline style usage increased: ${styleInlineCount} > 26`);
 }
 
 if (dangerousHtmlCount > 1) {

@@ -56,20 +56,11 @@ export function Education() {
           transition={{ duration: 0.7 }}
         >
           <p
-            className="text-[#6366f1] mb-2"
-            style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "0.875rem" }}
+            className="text-[#6366f1] mb-2 [font-family:JetBrains_Mono,monospace] text-[0.875rem]"
           >
             05. Education
           </p>
-          <h2
-            className="mb-16 education-title"
-            style={{
-              fontSize: "2rem",
-              fontWeight: 600,
-              letterSpacing: "-0.02em",
-              color: "var(--t-text)",
-            }}
-          >
+          <h2 className="mb-16 education-title text-[2rem] font-semibold tracking-[-0.02em] text-[var(--t-text)]">
             Education & Certifications
           </h2>
         </motion.div>
@@ -82,12 +73,7 @@ export function Education() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="p-6 md:p-8 rounded-xl transition-all"
-              style={{
-                backgroundColor: "var(--t-bg-surface)",
-                border: "1px solid var(--t-border)",
-                boxShadow: "var(--t-shadow)",
-              }}
+              className="p-6 md:p-8 rounded-xl transition-all bg-[var(--t-bg-surface)] border border-[var(--t-border)] [box-shadow:var(--t-shadow)]"
             >
               <div className="flex items-start gap-4">
                 {edu.logo ? (
@@ -102,25 +88,19 @@ export function Education() {
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
                     <div>
-                      <h3 style={{ fontSize: "1.1rem", fontWeight: 600, color: "var(--t-text)" }}>
+                      <h3 className="text-[1.1rem] font-semibold text-[var(--t-text)]">
                         {edu.school}
                       </h3>
-                      <p className="text-[#6366f1]" style={{ fontSize: "0.9rem" }}>
+                      <p className="text-[#6366f1] text-[0.9rem]">
                         {edu.degree}
                       </p>
                     </div>
                     <div className="flex flex-col items-start sm:items-end gap-1 shrink-0">
-                      <span
-                        className="flex items-center gap-1.5"
-                        style={{ fontSize: "0.8rem", color: "var(--t-text-muted)" }}
-                      >
+                      <span className="flex items-center gap-1.5 text-[0.8rem] text-[var(--t-text-muted)]">
                         <Calendar size={12} />
                         {edu.period}
                       </span>
-                      <span
-                        className="flex items-center gap-1.5"
-                        style={{ fontSize: "0.8rem", color: "var(--t-text-muted)" }}
-                      >
+                      <span className="flex items-center gap-1.5 text-[0.8rem] text-[var(--t-text-muted)]">
                         <MapPin size={12} />
                         {edu.location}
                       </span>
@@ -128,20 +108,19 @@ export function Education() {
                   </div>
 
                   {edu.gpa && (
-                    <p style={{ fontSize: "0.85rem", color: "var(--t-text-body)" }} className="mb-2">
-                      GPA: <span style={{ color: "var(--t-text)" }}>{edu.gpa}</span>
+                    <p className="mb-2 text-[0.85rem] text-[var(--t-text-body)]">
+                      GPA: <span className="text-[var(--t-text)]">{edu.gpa}</span>
                     </p>
                   )}
 
                   {edu.details.length > 0 && (
                     <div className="mt-3">
                       <p
-                        className="mb-1"
-                        style={{ fontSize: "0.8rem", fontWeight: 500, color: "var(--t-text-muted)" }}
+                        className="mb-1 text-[0.8rem] font-medium text-[var(--t-text-muted)]"
                       >
                         Relevant Coursework:
                       </p>
-                      <p style={{ fontSize: "0.85rem", color: "var(--t-text-body)" }}>
+                      <p className="text-[0.85rem] text-[var(--t-text-body)]">
                         {edu.details.join(", ")}
                       </p>
                     </div>
@@ -161,18 +140,12 @@ export function Education() {
           {certifications.map((cert) => (
             <div
               key={cert.title}
-              className="p-6 md:p-8 rounded-xl"
-              style={{
-                backgroundColor: "var(--t-bg-surface)",
-                border: "1px solid var(--t-border)",
-                boxShadow: "var(--t-shadow)",
-              }}
+              className="p-6 md:p-8 rounded-xl bg-[var(--t-bg-surface)] border border-[var(--t-border)] [box-shadow:var(--t-shadow)]"
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                 <div>
                   <h4
-                    className="flex items-center gap-2"
-                    style={{ fontSize: "1rem", fontWeight: 600, color: "var(--t-text)" }}
+                    className="flex items-center gap-2 text-[1rem] font-semibold text-[var(--t-text)]"
                   >
                     {cert.logo && (
                       <img
@@ -185,15 +158,12 @@ export function Education() {
                     )}
                     {cert.title}
                   </h4>
-                  <p style={{ fontSize: "0.85rem", color: "var(--t-text-body)" }}>
+                  <p className="text-[0.85rem] text-[var(--t-text-body)]">
                     {cert.issuer}{" "}
-                    <span style={{ color: "var(--t-text-muted)" }}>({cert.id})</span>
+                    <span className="text-[var(--t-text-muted)]">({cert.id})</span>
                   </p>
                 </div>
-                <span
-                  className="shrink-0"
-                  style={{ fontSize: "0.8rem", color: "var(--t-text-muted)" }}
-                >
+                <span className="shrink-0 text-[0.8rem] text-[var(--t-text-muted)]">
                   {cert.date}
                 </span>
               </div>
@@ -202,8 +172,7 @@ export function Education() {
                 {cert.details.map((d, i) => (
                   <li
                     key={i}
-                    className="flex gap-2"
-                    style={{ fontSize: "0.85rem", lineHeight: 1.7, color: "var(--t-text-body)" }}
+                    className="flex gap-2 text-[0.85rem] leading-[1.7] text-[var(--t-text-body)]"
                   >
                     <span className="text-[#6366f1] mt-0.5 shrink-0">▹</span>
                     <span>{d}</span>
@@ -216,8 +185,7 @@ export function Education() {
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="liquid-glass-primary inline-flex items-center gap-1.5 mt-4 px-5 py-2 rounded-full text-white"
-                  style={{ fontSize: "0.85rem", fontWeight: 500 }}
+                  className="liquid-glass-primary inline-flex items-center gap-1.5 mt-4 px-5 py-2 rounded-full text-white text-[0.85rem] font-medium"
                 >
                   View Certificate <ExternalLink size={14} />
                 </a>

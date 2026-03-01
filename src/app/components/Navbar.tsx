@@ -91,24 +91,12 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-[9999] liquid-glass-nav transition-all duration-500"
-      style={{ 
-        position: 'fixed', 
-        top: 0, 
-        left: 0, 
-        right: 0
-      }}
     >
       <div className="max-w-6xl mx-auto px-6 py-3 md:py-4 flex items-center justify-between">
         {/* Logo */}
         <button
           onClick={() => go("#hero")}
-          className="tracking-tight cursor-pointer"
-          style={{
-            fontFamily: "JetBrains Mono, monospace",
-            fontSize: "1.125rem",
-            fontWeight: 600,
-            color: "var(--t-text)",
-          }}
+          className="tracking-tight cursor-pointer [font-family:JetBrains_Mono,monospace] text-[1.125rem] font-semibold text-[var(--t-text)]"
         >
           {"<NG />"}
         </button>
@@ -178,8 +166,6 @@ export function Navbar() {
                           key={link.href}
                           className="nav-link-underline nav-link-underline-force px-4 py-1.5"
                           style={{
-                            fontSize: "0.8rem",
-                            fontWeight: 400,
                             color: "var(--t-text)",
                             whiteSpace: "nowrap",
                             flexShrink: 0,
@@ -204,8 +190,6 @@ export function Navbar() {
                 onMouseEnter={() => onEnter(i)}
                 className={`nav-link-underline ${hoveredIdx === i ? "nav-link-underline-hide" : ""} relative z-10 px-4 py-1.5 cursor-pointer transition-colors duration-150`}
                 style={{
-                  fontSize: "0.8rem",
-                  fontWeight: 400,
                   color:
                     hoveredIdx === i
                       ? "transparent"
@@ -221,9 +205,8 @@ export function Navbar() {
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            className="liquid-glass p-2.5 rounded-full cursor-pointer"
+            className="liquid-glass p-2.5 rounded-full cursor-pointer text-[var(--t-text-body)]"
             aria-label="Toggle theme"
-            style={{ color: "var(--t-text-body)" }}
           >
             <motion.div
               key={isDark ? "moon" : "sun"}
@@ -241,8 +224,7 @@ export function Navbar() {
             href={resumePdfPath}
             target="_blank"
             rel="noopener noreferrer"
-            className="liquid-glass-primary px-5 py-2 rounded-full text-white"
-            style={{ fontSize: "0.825rem", fontWeight: 500 }}
+            className="liquid-glass-primary px-5 py-2 rounded-full text-white text-[0.825rem] font-medium"
           >
             Resume
           </a>
@@ -252,15 +234,13 @@ export function Navbar() {
         <div className="md:hidden flex items-center gap-3">
           <button
             onClick={toggleTheme}
-            className="liquid-glass w-11 h-11 flex items-center justify-center rounded-full cursor-pointer shrink-0"
+            className="liquid-glass w-11 h-11 flex items-center justify-center rounded-full cursor-pointer shrink-0 text-[var(--t-text-body)]"
             aria-label="Toggle theme"
-            style={{ color: "var(--t-text-body)" }}
           >
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
           </button>
           <button
-            className="liquid-glass w-11 h-11 flex items-center justify-center rounded-full cursor-pointer shrink-0"
-            style={{ color: "var(--t-text)" }}
+            className="liquid-glass w-11 h-11 flex items-center justify-center rounded-full cursor-pointer shrink-0 text-[var(--t-text)]"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -269,8 +249,7 @@ export function Navbar() {
             href={resumePdfPath}
             target="_blank"
             rel="noopener noreferrer"
-            className="liquid-glass-primary h-11 px-3 flex items-center justify-center rounded-full text-white shrink-0"
-            style={{ fontSize: "0.8rem", fontWeight: 500 }}
+            className="liquid-glass-primary h-11 px-3 flex items-center justify-center rounded-full text-white shrink-0 text-[0.8rem] font-medium"
           >
             Resume
           </a>
@@ -291,8 +270,7 @@ export function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => go(link.href)}
-                  className="nav-link-underline transition-colors text-left cursor-pointer py-1"
-                  style={{ fontSize: "0.875rem", color: "var(--t-text-body)" }}
+                  className="nav-link-underline transition-colors text-left cursor-pointer py-1 text-[0.875rem] text-[var(--t-text-body)]"
                 >
                   {link.label}
                 </button>
