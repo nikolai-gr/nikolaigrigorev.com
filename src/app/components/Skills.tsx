@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { useInView } from "./hooks/useInView";
 
@@ -354,6 +354,7 @@ function lerp(a: number, b: number, t: number) {
 
 export function Skills() {
   const { ref: headerRef, isInView: headerVisible } = useInView(0.1);
+  const [isCanvasReady, setIsCanvasReady] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
@@ -368,7 +369,7 @@ export function Skills() {
 
     const dpr = Math.min(window.devicePixelRatio, 2);
     let width = 0, height = 0;
-    let rafId: number;
+    let rafId = 0;
     let time = 0;
     let lastTs = 0;
     let inView = false;
@@ -404,14 +405,39 @@ export function Skills() {
     const iconCache = new Map<string, HTMLImageElement>();
 
     // Preload internet icons; fallback to vector drawIcon if load fails.
+    const preloadPromises: Array<Promise<void>> = [];
     for (const s of skills) {
       const iconUrl = SKILL_ICON_URLS[s.id];
       if (!iconUrl) continue;
+
       const img = new Image();
       img.crossOrigin = "anonymous";
       img.decoding = "async";
-      img.src = iconUrl;
       iconCache.set(s.id, img);
+
+      preloadPromises.push(
+        new Promise((resolve) => {
+          const finish = async () => {
+            try {
+              await img.decode();
+            } catch {
+              // Keep going even if decode is not available/fails.
+            }
+            resolve();
+          };
+
+          img.onload = () => {
+            void finish();
+          };
+          img.onerror = () => {
+            resolve();
+          };
+          img.src = iconUrl;
+          if (img.complete) {
+            void finish();
+          }
+        }),
+      );
     }
 
     // Theme observer
@@ -738,13 +764,36 @@ export function Skills() {
       rafId = requestAnimationFrame(draw);
     }
 
-    resize();
     const ro = new ResizeObserver(() => resize());
-    ro.observe(section);
-    window.addEventListener("resize", resize);
-    rafId = requestAnimationFrame(draw);
+    let isDisposed = false;
+    let hasStartedAnimation = false;
+
+    function startAnimation() {
+      if (hasStartedAnimation) return;
+      if (isDisposed) return;
+      hasStartedAnimation = true;
+      setIsCanvasReady(true);
+      resize();
+      ro.observe(section);
+      window.addEventListener("resize", resize);
+      rafId = requestAnimationFrame(draw);
+    }
+
+    const preloadTimeoutMs = 1500;
+    let preloadTimeoutId = 0;
+    const timeoutPromise = new Promise<void>((resolve) => {
+      preloadTimeoutId = window.setTimeout(resolve, preloadTimeoutMs);
+    });
+
+    void Promise.race([Promise.allSettled(preloadPromises).then(() => undefined), timeoutPromise]).then(() => {
+      startAnimation();
+    });
 
     return () => {
+      isDisposed = true;
+      if (preloadTimeoutId) {
+        window.clearTimeout(preloadTimeoutId);
+      }
       themeObs.disconnect();
       io.disconnect();
       ro.disconnect();
@@ -795,7 +844,11 @@ export function Skills() {
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full"
-          style={{ cursor: "default" }}
+          style={{
+            cursor: "default",
+            opacity: isCanvasReady ? 1 : 0,
+            transition: "opacity 320ms ease",
+          }}
           aria-hidden
         />
 
