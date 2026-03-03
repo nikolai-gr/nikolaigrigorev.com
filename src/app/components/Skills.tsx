@@ -492,8 +492,7 @@ export function Skills() {
       if (width <= 0 || height <= 0) { rafId = requestAnimationFrame(draw); return; }
 
       const elapsed = ts - lastTs;
-      if (elapsed < 33 && lastTs > 0) { rafId = requestAnimationFrame(draw); return; }
-      const dt = lastTs ? Math.min(elapsed / 1000, 0.1) : 0.016;
+      const dt = lastTs ? Math.min(elapsed / 1000, 0.05) : 0.016;
       lastTs = ts;
       time += dt;
 
