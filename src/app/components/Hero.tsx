@@ -108,7 +108,7 @@ export function Hero() {
                 <Mail className="size-5" />
               </a>
               <a
-                href="/resume.pdf"
+                href="https://raw.githubusercontent.com/nikolai-gr/nikolaigrigorev.com/main/public/resume.pdf"
                 download="Nikolai_Grigorev_Resume.pdf"
                 className="text-gray-600 hover:text-black transition-colors"
                 aria-label="Download Resume"
