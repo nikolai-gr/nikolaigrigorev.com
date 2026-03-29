@@ -8,5 +8,5 @@
   <line x1="6" y1="10" x2="13" y2="22" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
   <line x1="13" y1="10" x2="13" y2="22" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
   <!-- G -->
-  <path d="M19 13.5 C19 13.5 17 10 20.5 10 C24 10 26 12.5 26 16 C26 19.5 24 22 20.5 22 C17 22 17 19 17 19 L17 16.5 L22 16.5" stroke="black" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+  <polyline points="25,10 17,10 17,22 26,22 26,16 21,16" stroke="black" stroke-width="1.5" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
 </svg>
