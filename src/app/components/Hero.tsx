@@ -109,7 +109,7 @@ export function Hero() {
               </a>
               <a
                 href="https://raw.githubusercontent.com/nikolai-gr/nikolaigrigorev.com/main/public/resume.pdf"
-                download="Nikolai_Grigorev_Resume.pdf"
+                download="Nikolai Grigorev Resume.pdf"
                 className="text-gray-600 hover:text-black transition-colors"
                 aria-label="Download Resume"
               >

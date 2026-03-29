@@ -60,7 +60,7 @@ export function Header() {
             ))}
             <motion.a
               href="https://raw.githubusercontent.com/nikolai-gr/nikolaigrigorev.com/main/public/resume.pdf"
-              download="Nikolai_Grigorev_Resume.pdf"
+              download="Nikolai Grigorev Resume.pdf"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * navItems.length }}
@@ -105,7 +105,7 @@ export function Header() {
               ))}
               <a
                 href="https://raw.githubusercontent.com/nikolai-gr/nikolaigrigorev.com/main/public/resume.pdf"
-                download="Nikolai_Grigorev_Resume.pdf"
+                download="Nikolai Grigorev Resume.pdf"
                 className="block text-sm text-black border border-black px-4 py-2 text-center hover:bg-black hover:text-white transition-colors"
               >
                 Resume
