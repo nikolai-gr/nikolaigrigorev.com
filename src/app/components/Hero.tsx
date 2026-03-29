@@ -1,6 +1,6 @@
 import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
 import { motion } from 'motion/react';
-import profileImage from 'figma:asset/1bc86e099666fed799065900797812fc00de7bba.png';
+import profileImage from '../../assets/1bc86e099666fed799065900797812fc00de7bba.png';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Hero() {
