@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { Github, Linkedin, Mail, Instagram, FileText } from 'lucide-react';
 import { motion } from 'motion/react';
 import profileImage from '../../assets/1bc86e099666fed799065900797812fc00de7bba.png';
 import { ImageWithFallback } from './figma/ImageWithFallback';
@@ -106,6 +106,14 @@ export function Hero() {
                 aria-label="Email"
               >
                 <Mail className="size-5" />
+              </a>
+              <a
+                href="/resume.pdf"
+                download="Nikolai_Grigorev_Resume.pdf"
+                className="text-gray-600 hover:text-black transition-colors"
+                aria-label="Download Resume"
+              >
+                <FileText className="size-5" />
               </a>
             </motion.div>
 
