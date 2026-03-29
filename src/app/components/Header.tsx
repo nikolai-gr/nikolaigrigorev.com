@@ -59,7 +59,7 @@ export function Header() {
               </motion.a>
             ))}
             <motion.a
-              href="https://raw.githubusercontent.com/nikolai-gr/nikolaigrigorev.com/main/public/resume.pdf"
+              href="https://raw.githubusercontent.com/nikolai-gr/nikolaigrigorev.com/main/public/Nikolai%20Grigorev%20Resume.pdf"
               download="Nikolai Grigorev Resume.pdf"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export function Header() {
                 </a>
               ))}
               <a
-                href="https://raw.githubusercontent.com/nikolai-gr/nikolaigrigorev.com/main/public/resume.pdf"
+                href="https://raw.githubusercontent.com/nikolai-gr/nikolaigrigorev.com/main/public/Nikolai%20Grigorev%20Resume.pdf"
                 download="Nikolai Grigorev Resume.pdf"
                 className="block text-sm text-black border border-black px-4 py-2 text-center hover:bg-black hover:text-white transition-colors"
               >
