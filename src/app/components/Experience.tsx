@@ -8,6 +8,17 @@ export function Experience() {
 
   const experiences = [
     {
+      title: 'iOS Developer',
+      company: 'Accenture',
+      period: 'May 2026 - Present',
+      location: 'New York, NY',
+      description: [
+        'Building native iOS applications with a focus on modern mobile architecture and clean, scalable Swift code',
+        'Bridging robust backend logic with elegant, user-centric SwiftUI interfaces',
+        'Exploring Large Language Model (LLM) integration into native applications to deliver AI-enhanced experiences',
+      ],
+    },
+    {
       title: 'iOS Developer (Intensive Training)',
       company: 'Hacking with Swift (100 Days of SwiftUI)',
       period: 'Feb. 2026 - Present',

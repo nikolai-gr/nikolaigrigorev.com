@@ -45,7 +45,7 @@ export function Hero() {
                 transition={{ delay: 0.6 }}
                 className="text-sm uppercase tracking-wider text-gray-500"
               >
-                Software Engineer
+                iOS Developer @ Accenture
               </motion.p>
               
               <motion.h1 
@@ -64,7 +64,7 @@ export function Hero() {
               transition={{ delay: 0.9 }}
               className="text-lg md:text-xl text-gray-600 leading-relaxed"
             >
-              I build exceptional digital experiences with clean code and thoughtful design.
+              Bridging robust backend logic and elegant, user-centric interfaces — building toward an AI-Enhanced iOS future.
             </motion.p>
 
             <motion.div 

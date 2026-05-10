@@ -8,19 +8,19 @@ export function Skills() {
   const skillCategories = [
     {
       category: 'Languages',
-      skills: ['Swift (SwiftUI)', 'Python', 'SQL', 'HTML/CSS'],
+      skills: ['Swift', 'Python'],
+    },
+    {
+      category: 'Frameworks',
+      skills: ['SwiftUI', 'Core ML'],
     },
     {
       category: 'Tools',
-      skills: ['Xcode', 'Git', 'Figma', 'CoreData', 'Unix'],
+      skills: ['Xcode', 'Git', 'Mobile Architecture', 'LLM Integration'],
     },
     {
-      category: 'ML/AI',
-      skills: ['PyTorch', 'Prompt Engineering'],
-    },
-    {
-      category: 'Practices',
-      skills: ['MVVM', 'Protocol-Oriented Programming', 'State Management', 'UI/UX Design', 'RESTful APIs'],
+      category: 'Interests',
+      skills: ['Fintech (Stripe, Ramp, Brex)', 'AI / ML', 'Scalable Mobile Systems'],
     },
   ];
 

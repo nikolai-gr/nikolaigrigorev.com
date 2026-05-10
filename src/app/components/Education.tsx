@@ -16,7 +16,7 @@ export function Education() {
     },
     {
       degree: 'A.A.S. in Computer Information Systems',
-      institution: 'New York City College of Technology, The City University of New York',
+      institution: 'New York City College of Technology (City Tech), CUNY',
       period: 'Sep. 2024 - May 2026',
       location: 'Brooklyn, NY',
       details: 'GPA: 3.62 | Coursework: Data Structures, Algorithms, Object-Oriented Programming, Applied Machine Learning, Artificial Intelligence',
