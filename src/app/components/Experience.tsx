@@ -21,7 +21,7 @@ export function Experience() {
     {
       title: 'iOS Developer (Intensive Training)',
       company: 'Hacking with Swift (100 Days of SwiftUI)',
-      period: 'Feb. 2026 - Present',
+      period: 'Feb. 2026 - Apr. 2026',
       location: 'Remote',
       description: [
         'Mastering advanced Swift architecture through an intensive curriculum, focusing on Protocol-Oriented Programming (POP), closures, and memory management',
@@ -39,16 +39,6 @@ export function Experience() {
         'Architected networking layers utilizing URLSession and JSON parsing to fetch and synchronize real-time menu data from remote APIs',
         'Translated high-fidelity Figma wireframes into functional code, ensuring pixel-perfect UI execution and seamless user navigation flows',
         'Leveraged the MVVM architectural pattern to decouple business logic from UI, improving code maintainability and testability',
-      ],
-    },
-    {
-      title: 'Kitchen Staff',
-      company: 'Pilot Restaurant',
-      period: 'May 2024 - Aug. 2024',
-      location: 'New York, NY',
-      description: [
-        'Streamlined high-volume kitchen operations during peak service hours, ensuring 100% adherence to quality and presentation standards',
-        'Optimized ingredient management and prep workflows, contributing to a measurable reduction in kitchen preparation time through efficient organization',
       ],
     },
   ];
